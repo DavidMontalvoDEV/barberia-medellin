@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Barbería Medellín — Panel</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="app">
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="logo">
+      <span class="logo-symbol">✦</span>
+      <div class="logo-title">Barbería Medellín</div>
+      <div class="logo-sub">Panel de gestión</div>
+      <div class="logo-line"></div>
+    </div>
+
+    <nav class="nav">
+      <div class="nav-section">General</div>
+      <div class="nav-item active" onclick="showTab('dashboard')">
+        <span class="nav-icon">◈</span> Dashboard
+      </div>
+      <div class="nav-section">Gestión</div>
+      <div class="nav-item" onclick="showTab('citas')">
+        <span class="nav-icon">◷</span> Citas
+      </div>
+      <div class="nav-item" onclick="showTab('barberos')">
+        <span class="nav-icon">◉</span> Barberos
+      </div>
+      <div class="nav-item" onclick="showTab('clientes')">
+        <span class="nav-icon">◎</span> Clientes
+      </div>
+      <div class="nav-item" onclick="showTab('servicios')">
+        <span class="nav-icon">◆</span> Servicios
+      </div>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="sidebar-status">
+        <div class="status-dot"></div>
+        Servidor activo
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+    <div class="topbar">
+      <div class="topbar-left">
+        <div class="page-title" id="pageTitle">Dashboard</div>
+        <div class="page-sub" id="pageSub">Resumen general</div>
+      </div>
+      <div class="topbar-right">
+        <div class="topbar-date" id="topbarDate"></div>
+        <button class="btn-add" id="btnAdd" onclick="openForm()" style="display:none">+ Agregar</button>
+      </div>
+    </div>
+    <div class="content" id="content"></div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div class="form-overlay" id="formOverlay">
+  <div class="form-card">
+    <div class="form-title" id="formTitle">Nuevo registro</div>
+    <div class="form-subtitle" id="formSubtitle">Completa los campos a continuación</div>
+    <div class="form-divider"></div>
+    <div id="formFields"></div>
+    <div class="form-actions">
+      <button class="btn-cancel" onclick="closeForm()">Cancelar</button>
+      <button class="btn-save" onclick="saveForm()">Guardar</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
