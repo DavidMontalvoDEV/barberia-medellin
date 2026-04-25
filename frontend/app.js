@@ -1,4 +1,4 @@
-const BASE = 'http://localhost:3000';
+const BASE = 'https://barberia-medellin-production.up.railway.app';
 let currentTab = 'dashboard';
 let editingId = null;
 
